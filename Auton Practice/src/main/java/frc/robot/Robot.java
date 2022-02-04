@@ -121,15 +121,15 @@ public class Robot extends TimedRobot {
     // drive.tankDrive(0, 0);
     // return;
 
-
-
-    //Driving straight
-    if(rightEncoder.getDistance() < 19 || leftEncoder.getDistance() < 19) {
+    if(rightEncoder.getDistance() < 19) {
       drive.tankDrive(.4075, .4);
     } 
-    else if(rightEncoder.getDistance() < 101.6 || leftEncoder.getDistance() > -63.6) {
+    else if(rightEncoder.getDistance() < 101.6) {
       drive.tankDrive(-.4075, .4);
     } 
+    else if(leftEncoder.getDistance() > -73){
+      drive.tankDrive(-.4075, -.4);
+    }
     else {
       drive.tankDrive(0, 0);
     }
